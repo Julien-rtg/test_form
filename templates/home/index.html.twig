@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add Product{% endblock %}
+
+{% block body %}
+
+    {{ dump(products) }}
+
+    <div class="container">
+        {% for product in products %}
+            {{ product.name }}
+            {{ product.price }}
+            <img src="{{ product.image }}" alt=""> 
+            {{ product.description }}
+        {% endfor %}
+    </div>
+
+    <a href="{{ path("create_product") }}" class="btn btn-success">Add Product</a>
+
+{% endblock %}
